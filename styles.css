@@ -1,13 +1,15 @@
+    /* Global Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 nav ul {
@@ -28,8 +30,12 @@ nav a {
     font-weight: bold;
 }
 
+section {
+    padding: 60px 20px;
+}
+
 .hero {
-    background: url('lib/hero-bg.jpg') no-repeat center center/cover;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     height: 100vh;
     display: flex;
@@ -40,11 +46,17 @@ nav a {
 
 .hero-content {
     max-width: 600px;
+    background: rgba(0, 0, 0, 0.5); /* Slight dark overlay for readability */
+    padding: 20px;
+    border-radius: 8px;
 }
 
-.about, .portfolio, .contact {
-    padding: 50px 20px;
-    text-align: center;
+.about, .portfolio {
+    background-color: #f4f4f4;
+}
+
+.about h2, .portfolio h2 {
+    color: #333;
 }
 
 .portfolio-gallery {
@@ -56,53 +68,29 @@ nav a {
 .portfolio-item {
     margin: 10px;
     border: 1px solid #ddd;
-    padding: 10px;
-    width: calc(33.333% - 20px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input, form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    height: auto;
+    display: block;
 }
 
-form button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
 .contact {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
-    text-align: center;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
 }
 
 .contact h2 {
-    margin-bottom: 20px;
     color: #333;
 }
 
@@ -114,32 +102,39 @@ footer {
 .form-group label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #333;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     box-sizing: border-box;
     font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #333;
+    outline: none;
 }
 
 .form-group textarea {
     resize: vertical;
-    height: 150px;
+    min-height: 150px;
 }
 
 button {
     background: #333;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -149,9 +144,20 @@ button:hover {
 .form-feedback {
     margin-top: 15px;
     font-size: 16px;
-    color: #d9534f; /* Red color for error messages */
 }
 
 .form-feedback.success {
-    color: #5bc0de; /* Blue color for success messages */
-        }
+    color: #28a745; /* Green color for success messages */
+}
+
+.form-feedback.error {
+    color: #dc3545; /* Red color for error messages */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    }
