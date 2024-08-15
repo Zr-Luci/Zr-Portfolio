@@ -3,16 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Animation Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Animation Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="overlay">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hover over the objects to interact.</p>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <header>
+        <h1>My Animation Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! I am an animator with a passion for creating engaging and dynamic animations. Here you can explore my projects and get in touch with me.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <div class="image-container">
+                <img src="lib/project1.jpg" alt="Project 1">
+            </div>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <div class="image-container">
+                <img src="lib/project2.jpg" alt="Project 2">
+            </div>
+            <p>Description of Project 2.</p>
+        </div>
+        <div class="project">
+            <h3>Project 3</h3>
+            <div class="image-container">
+                <img src="lib/project3.jpg" alt="Project 3">
+            </div>
+            <p>Description of Project 3.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you would like to get in touch, please email me at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Check out my latest posts and updates here.</p>
+        <!-- Blog entries will be added dynamically by scripts.js -->
+    </section>
+
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Feedback</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 My Animation Portfolio</p>
+    </footer>
+
+    <script src="styles.js"></script>
     <script src="scripts.js"></script>
-    <script src="style.js"></script>
 </body>
-</html>
+    </html>
+                                 
