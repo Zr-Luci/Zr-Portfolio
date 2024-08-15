@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Animation Portfolio</title>
+    <title>Animated Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>My Animation Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -19,70 +18,71 @@
             </ul>
         </nav>
     </header>
-
+    
     <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome to my portfolio! I am an animator with a passion for creating engaging and dynamic animations. Here you can explore my projects and get in touch with me.</p>
+        <h1>About Me</h1>
+        <p>This is the About section.</p>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <div class="image-container">
-                <img src="lib/project1.jpg" alt="Project 1">
+        <h1>Projects</h1>
+        <div id="portfolio">
+            <div class="project">
+                <div class="image-container">
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <h2>Project 1</h2>
+                <p>Details about Project 1.</p>
+                <button>View More</button>
             </div>
-            <p>Description of Project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <div class="image-container">
-                <img src="lib/project2.jpg" alt="Project 2">
+            <div class="project">
+                <div class="image-container">
+                    <img src="project2.jpg" alt="Project 2">
+                </div>
+                <h2>Project 2</h2>
+                <p>Details about Project 2.</p>
+                <button>View More</button>
             </div>
-            <p>Description of Project 2.</p>
-        </div>
-        <div class="project">
-            <h3>Project 3</h3>
-            <div class="image-container">
-                <img src="lib/project3.jpg" alt="Project 3">
-            </div>
-            <p>Description of Project 3.</p>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>If you would like to get in touch, please email me at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Check out my latest posts and updates here.</p>
-        <!-- Blog entries will be added dynamically by scripts.js -->
-    </section>
-
-    <section id="feedback">
-        <h2>Feedback</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <h1>Contact Me</h1>
+        <form>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
+            <input type="text" id="name" name="name">
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
+            <input type="email" id="email" name="email">
+
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
+            <textarea id="message" name="message"></textarea>
+
             <button type="submit">Send Feedback</button>
         </form>
     </section>
 
-    <footer>
-        <p>© 2024 My Animation Portfolio</p>
-    </footer>
+    <section id="blog">
+        <h1>Blog</h1>
+        <!-- Blog posts will be added dynamically here -->
+    </section>
 
-    <script src="styles.js"></script>
+    <section id="feedback">
+        <h1>Feedback</h1>
+        <form>
+            <label for="feedback-name">Name:</label>
+            <input type="text" id="feedback-name" name="feedback-name">
+
+            <label for="feedback-email">Email:</label>
+            <input type="email" id="feedback-email" name="feedback-email">
+
+            <label for="feedback-message">Feedback:</label>
+            <textarea id="feedback-message" name="feedback-message"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
     <script src="scripts.js"></script>
 </body>
-    </html>
-                                 
+</html>
