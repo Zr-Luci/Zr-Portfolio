@@ -3,71 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>3D Animation Portfolio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        #overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Explore my projects and get in touch.</p>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2 class="fade-in">About Me</h2>
-        <p class="fade-in">I am a web developer with a passion for creating beautiful and functional websites. My expertise includes HTML, CSS, JavaScript, and various frameworks.</p>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <h2 class="fade-in">My Work</h2>
-        <div class="portfolio-gallery">
-            <div class="portfolio-item zoom-in">
-                <img src="lib/project1.jpg" alt="Project 1">
-            </div>
-            <div class="portfolio-item zoom-in">
-                <img src="lib/project2.jpg" alt="Project 2">
-            </div>
-            <!-- Add more portfolio items as needed -->
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2 class="fade-in">Contact Me</h2>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-            <div id="formFeedback" class="form-feedback"></div>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+    <div id="overlay">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hover over the objects to interact.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+    <script src="style.js"></script>
 </body>
-            </html>
-            
+</html>
