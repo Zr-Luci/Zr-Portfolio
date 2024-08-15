@@ -1,15 +1,17 @@
-    /* Global Styles */
+/* Global Styles */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
+    background-color: #f0f0f0;
 }
 
 header {
-    background: #333;
+    background: #292b2c;
     color: #fff;
-    padding: 15px 0;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -21,17 +23,24 @@ nav ul {
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f0ad4e;
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero {
@@ -42,73 +51,93 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .hero-content {
-    max-width: 600px;
-    background: rgba(0, 0, 0, 0.5); /* Slight dark overlay for readability */
-    padding: 20px;
-    border-radius: 8px;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better readability */
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
 }
 
 .about, .portfolio {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin-bottom: 40px;
 }
 
 .about h2, .portfolio h2 {
-    color: #333;
+    color: #292b2c;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .portfolio-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .portfolio-item {
-    margin: 10px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 300px;
+    background: #fff;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
 .contact {
     background-color: #ffffff;
     border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
 .contact h2 {
-    color: #333;
+    color: #292b2c;
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: left;
 }
 
 .form-group label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #292b2c;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
@@ -117,7 +146,7 @@ section {
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    border-color: #333;
+    border-color: #f0ad4e;
     outline: none;
 }
 
@@ -127,10 +156,10 @@ section {
 }
 
 button {
-    background: #333;
+    background: #292b2c;
     color: #fff;
     border: none;
-    padding: 12px 20px;
+    padding: 15px 25px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
@@ -138,11 +167,11 @@ button {
 }
 
 button:hover {
-    background: #555;
+    background: #444;
 }
 
 .form-feedback {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 16px;
 }
 
@@ -155,9 +184,31 @@ button:hover {
 }
 
 footer {
-    background: #333;
+    background: #292b2c;
     color: #fff;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .portfolio-gallery {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .portfolio-item {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
