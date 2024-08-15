@@ -1,76 +1,102 @@
-// scripts.js
-
-// Scene setup
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-// Lighting
-const ambientLight = new THREE.AmbientLight(0x404040, 2); // Soft white light
-scene.add(ambientLight);
-
-const pointLight = new THREE.PointLight(0xffffff, 1);
-pointLight.position.set(50, 50, 50);
-scene.add(pointLight);
-
-// Geometry
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-const sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xff7700 });
-const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-sphere.position.set(2, 0, 0);
-scene.add(sphere);
-
-// Camera position
-camera.position.z = 5;
-
-// Animation loop
-function animate() {
-    requestAnimationFrame(animate);
-
-    // Rotate objects
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-}
-animate();
-
-// Handle window resize
-window.addEventListener('resize', () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    renderer.setSize(width, height);
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-});
-
-// Mouse interaction with raycasting
-let raycaster = new THREE.Raycaster();
-let mouse = new THREE.Vector2();
-
-window.addEventListener('mousemove', (event) => {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(scene.children);
-
-    scene.children.forEach((object) => {
-        object.material.emissive.setHex(0x000000); // Reset color
+document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scrolling for navigation links
+    const links = document.querySelectorAll('header nav a');
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
     });
 
-    for (let i = 0; i < intersects.length; i++) {
-        intersects[i].object.material.emissive.setHex(0xff0000); // Highlight on hover
+    // Form validation and animation
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            const name = form.querySelector('#name').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            const message = form.querySelector('#message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                showAlert('Please fill out all fields.');
+                event.preventDefault(); // Prevent form submission
+            } else if (!validateEmail(email)) {
+                showAlert('Please enter a valid email address.');
+                event.preventDefault(); // Prevent form submission
+            } else {
+                // Simulate form submission delay
+                showLoadingState();
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showAlert(message) {
+            const alert = document.createElement('div');
+            alert.className = 'alert';
+            alert.textContent = message;
+            document.body.appendChild(alert);
+            setTimeout(() => alert.remove(), 3000);
+        }
+
+        function showLoadingState() {
+            const button = form.querySelector('button');
+            button.textContent = 'Sending...';
+            button.disabled = true;
+
+            // Adding a subtle fade-out animation to the form
+            form.classList.add('fade-out');
+            setTimeout(() => {
+                form.reset();
+                button.textContent = 'Sent!';
+                setTimeout(() => {
+                    button.textContent = 'Send Feedback';
+                    button.disabled = false;
+                    form.classList.remove('fade-out');
+                }, 2000);
+            }, 1500);
+        }
+    }
+
+    // Adding dynamic content to the blog section
+    const blogSection = document.getElementById('blog');
+    if (blogSection) {
+        const posts = [
+            {
+                title: 'How I Create Animations',
+                content: 'In this post, I will share some tips and tricks on creating animations.'
+            },
+            {
+                title: 'Top 5 Animation Tools',
+                content: 'Here are my top 5 tools for creating amazing animations.'
+            },
+            {
+                title: 'Animating for Beginners',
+                content: 'A beginner’s guide to getting started with animation.'
+            }
+        ];
+
+        const blogContent = posts.map(post => `
+            <article class="blog-post">
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+            </article>
+        `).join('');
+
+        blogSection.innerHTML += blogContent;
+
+        // Adding animations to blog posts
+        const blogPosts = document.querySelectorAll('.blog-post');
+        blogPosts.forEach(post => {
+            post.classList.add('animate');
+        });
     }
 });
-        
+            
