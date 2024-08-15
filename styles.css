@@ -35,7 +35,7 @@ section {
 }
 
 .hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
+    background: url('lib/hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     height: 100vh;
     display: flex;
