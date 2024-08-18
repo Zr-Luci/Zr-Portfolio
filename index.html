@@ -3,71 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">Your Logo</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="home">
-        <div class="intro">
-            <h1>Hello, I'm Your Name</h1>
-            <p>I'm a [Your Profession].</p>
-            <a href="#projects" class="btn">See My Work</a>
-        </div>
-    </section>
+    <!-- Loading Animation -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>A brief introduction about yourself and your expertise.</p>
-    </section>
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">Your Logo</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">Dark Mode</button>
+        </nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-item">
-                <img src="lib/project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Short description of the project.</p>
+        <!-- Home Section -->
+        <section id="home" class="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Your brief introduction or tagline goes here.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>Brief introduction or biography.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+            <div class="project-item">Project 1</div>
+            <div class="project-item">Project 2</div>
+            <div class="project-item">Project 3</div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </footer>
+
+        <!-- Feedback Button -->
+        <button id="feedback-btn" class="feedback-btn">Feedback</button>
+
+        <!-- Feedback Modal -->
+        <div id="feedback-modal" class="feedback-modal">
+            <div class="feedback-modal-content">
+                <span class="close">&times;</span>
+                <h2>Leave Your Feedback</h2>
+                <form id="feedback-form">
+                    <input type="text" name="user_name" placeholder="Your Name" required>
+                    <input type="email" name="user_email" placeholder="Your Email" required>
+                    <textarea name="user_feedback" placeholder="Your Feedback" required></textarea>
+                    <button type="submit">Submit Feedback</button>
+                </form>
             </div>
-            <div class="project-item">
-                <img src="lib/project2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Short description of the project.</p>
-            </div>
-            <!-- Add more project items as needed -->
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-    </footer>
-
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
     <script src="script.js"></script>
 </body>
-    </html>
-    
+                                                                                            </html>
+                                                                                            
