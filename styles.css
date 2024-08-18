@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg-color);
+    transition: background-color 0.3s;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: var(--nav-link-hover-color);
+}
+
+/* Button Styles */
+.btn, .theme-toggle, .feedback-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover, .theme-toggle:hover, .feedback-btn:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.05);
+}
+
+/* Feedback Modal */
+.feedback-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.feedback-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-modal-content {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.feedback-modal-content h2 {
+    margin-top: 0;
+}
+
+.feedback-modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.feedback-modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feedback-modal-content input,
+.feedback-modal-content textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+}
+
+.feedback-modal-content button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.feedback-modal-content button:hover {
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+}
+
+/* Theme Styles */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --nav-bg-color: #1e1e1e;
+    --nav-link-color: #e0e0e0;
+    --nav-link-hover-color: #f0f0f0;
+    --primary-color: #6200ee;
+    --secondary-color: #ffffff;
+    --btn-hover-color: #3700b3;
+    --btn-bg-color: #03dac6;
+    --btn-text-color: #000000;
+}
+
+[data-theme="light"] {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --nav-bg-color: #f5f5f5;
+    --nav-link-color: #000000;
+    --nav-link-hover-color: #6200ee;
+    --primary-color: #6200ee;
+    --secondary-color: #ffffff;
+    --btn-hover-color: #3700b3;
+    --btn-bg-color: #03dac6;
+    --btn-text-color: #000000;
+}
+
+/* Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-color);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-In Effect */
+.loaded #main-content {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+#main-content {
+    opacity: 0;
+    }
+    
