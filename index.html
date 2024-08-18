@@ -3,86 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Portfolio</title>
+    <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h1>About Me</h1>
-        <p>This is the About section.</p>
-    </section>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Your Logo</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="projects">
-        <h1>Projects</h1>
-        <div id="portfolio">
-            <div class="project">
-                <div class="image-container">
-                    <img src="project1.jpg" alt="Project 1">
-                </div>
-                <h2>Project 1</h2>
-                <p>Details about Project 1.</p>
-                <button>View More</button>
-            </div>
-            <div class="project">
-                <div class="image-container">
-                    <img src="project2.jpg" alt="Project 2">
-                </div>
-                <h2>Project 2</h2>
-                <p>Details about Project 2.</p>
-                <button>View More</button>
-            </div>
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="intro">
+            <h1>Hello, I'm Your Name</h1>
+            <p>I'm a [Your Profession].</p>
+            <a href="#projects" class="btn">See My Work</a>
         </div>
     </section>
 
-    <section id="contact">
-        <h1>Contact Me</h1>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>A brief introduction about yourself and your expertise.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Short description of the project.</p>
+            </div>
+            <!-- Add more project items as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
         <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-
-            <button type="submit">Send Feedback</button>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
-    <section id="blog">
-        <h1>Blog</h1>
-        <!-- Blog posts will be added dynamically here -->
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
 
-    <section id="feedback">
-        <h1>Feedback</h1>
-        <form>
-            <label for="feedback-name">Name:</label>
-            <input type="text" id="feedback-name" name="feedback-name">
-
-            <label for="feedback-email">Email:</label>
-            <input type="email" id="feedback-email" name="feedback-email">
-
-            <label for="feedback-message">Feedback:</label>
-            <textarea id="feedback-message" name="feedback-message"></textarea>
-
-            <button type="submit">Submit Feedback</button>
-        </form>
-    </section>
-
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+    </html>
+    
